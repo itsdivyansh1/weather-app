@@ -20,19 +20,23 @@ const Hero = () => {
         <Weather temp={city} />
       </div>
       <div className="w-[40vw] h-[90vh] flex justify-center items-center max-md:w-full pr-10">
-        {city > 20 ? (
-          <img
-            src="../images/cloud_sunny.svg"
-            className="max-md:p-16"
-            width={400}
-          />
-        ) : (
-          <img
-            src="../images/cloud_rainy.svg"
-            className="max-md:p-16"
-            width={400}
-          />
-        )}
+        {city > 20
+          ? (
+              <img
+                src="../images/cloud_sunny.svg"
+                className="max-md:p-16"
+                width={400}
+              />
+            ) ||
+            city <
+              20(
+                <img
+                  src="../images/cloud_rainy.svg"
+                  className="max-md:p-16"
+                  width={400}
+                />
+              )
+          : "No data"}
       </div>
     </div>
   );
