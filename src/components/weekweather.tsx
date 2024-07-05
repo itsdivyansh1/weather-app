@@ -4,30 +4,37 @@ import { SunIcon } from "lucide-react";
 
 const week = [
   {
+    index: 1,
     day: "Sunday",
   },
 
   {
-    day: "Sunday",
-  },
-
-  {
+    index: 2,
     day: "Monday",
   },
 
   {
+    index: 3,
     day: "Tuesday",
   },
 
   {
+    index: 4,
+    day: "Wednesday",
+  },
+
+  {
+    index: 5,
     day: "Thursday",
   },
 
   {
+    index: 6,
     day: "Friday",
   },
 
   {
+    index: 7,
     day: "Saturday",
   },
 ];
@@ -38,7 +45,10 @@ function WeekWeather() {
       <h2 className="text-2xl font-bold tracking-tight">Week</h2>
       <div className="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3 lg:grid-cols-4">
         {week.map((day) => (
-          <Card className="bg-secondary rounded-2xl" key={day.day}>
+          <Card
+            className="bg-secondary rounded-2xl flex items-center justify-between"
+            key={day.index}
+          >
             <CardHeader>
               <SunIcon className="w-16 h-16" />
             </CardHeader>

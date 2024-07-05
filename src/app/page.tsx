@@ -1,6 +1,7 @@
 import { ShowCalendar } from "@/components/calendar";
 import Header from "@/components/header";
 import MainWeather from "@/components/mainweather";
+import TodaysHighlight from "@/components/todays-highlight";
 import WeekWeather from "@/components/weekweather";
 
 import { SearchIcon } from "lucide-react";
@@ -18,6 +19,8 @@ export default async function Home({ params }: any) {
 
         <MainWeather />
         <WeekWeather />
+
+        <TodaysHighlight />
       </div>
       <div className="col-span-1 m-2 md:m-8">
         <Header title="Calendar" />
