@@ -1,13 +1,4 @@
-import {
-  Book,
-  Bot,
-  Code2,
-  LifeBuoy,
-  Settings2,
-  SquareTerminal,
-  SquareUser,
-  Triangle,
-} from "lucide-react";
+import { Cloud, HomeIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,13 +7,14 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
+import { ToggleTheme } from "./toggle-theme";
 
 export function Dashboard() {
   return (
     <aside className="w-14 sticky left-0 top-0 z-20 md:flex hidden h-screen flex-col border-r">
       <div className="border-b p-2">
         <Button variant="outline" size="icon" aria-label="Home">
-          <Triangle className="size-5 fill-foreground" />
+          <Cloud className="size-5 fill-foreground" />
         </Button>
       </div>
       <nav className="grid gap-1 p-2">
@@ -35,71 +27,11 @@ export function Dashboard() {
                 className="rounded-lg bg-muted"
                 aria-label="Playground"
               >
-                <SquareTerminal className="size-5" />
+                <HomeIcon className="size-5" />
               </Button>
             </TooltipTrigger>
             <TooltipContent side="right" sideOffset={5}>
-              Playground
-            </TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-lg"
-                aria-label="Models"
-              >
-                <Bot className="size-5" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent side="right" sideOffset={5}>
-              Models
-            </TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-lg"
-                aria-label="API"
-              >
-                <Code2 className="size-5" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent side="right" sideOffset={5}>
-              API
-            </TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-lg"
-                aria-label="Documentation"
-              >
-                <Book className="size-5" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent side="right" sideOffset={5}>
-              Documentation
-            </TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-lg"
-                aria-label="Settings"
-              >
-                <Settings2 className="size-5" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent side="right" sideOffset={5}>
-              Settings
+              Home
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
@@ -108,32 +40,10 @@ export function Dashboard() {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="mt-auto rounded-lg"
-                aria-label="Help"
-              >
-                <LifeBuoy className="size-5" />
-              </Button>
+              <ToggleTheme />
             </TooltipTrigger>
             <TooltipContent side="right" sideOffset={5}>
-              Help
-            </TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="mt-auto rounded-lg"
-                aria-label="Account"
-              >
-                <SquareUser className="size-5" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent side="right" sideOffset={5}>
-              Account
+              Toggle Theme
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
