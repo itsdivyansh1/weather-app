@@ -37,8 +37,8 @@ function WeekWeather() {
     <div className="mt-8">
       <h2 className="text-2xl font-bold tracking-tight">Week</h2>
       <div className="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3 lg:grid-cols-4">
-        {week.map((day) => (
-          <Card className="bg-secondary rounded-2xl">
+        {week.map((day, index) => (
+          <Card className="bg-secondary rounded-2xl" key={index}>
             <CardHeader>
               <SunIcon className="w-16 h-16" />
             </CardHeader>
