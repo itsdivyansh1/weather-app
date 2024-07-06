@@ -1,58 +1,46 @@
 import React from "react";
 import { Card, CardContent, CardHeader } from "./ui/card";
-import { SunIcon } from "lucide-react";
+import Image from "next/image";
+import { FetchTemp } from "./fetchtemp";
 
-const week = [
-  {
-    index: 1,
-    day: "Sunday",
-  },
+async function WeekWeather() {
+  const city = await FetchTemp("Mumbai");
+  const weekday = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
-  {
-    index: 2,
-    day: "Monday",
-  },
-
-  {
-    index: 3,
-    day: "Tuesday",
-  },
-
-  {
-    index: 4,
-    day: "Wednesday",
-  },
-
-  {
-    index: 5,
-    day: "Thursday",
-  },
-
-  {
-    index: 6,
-    day: "Friday",
-  },
-
-  {
-    index: 7,
-    day: "Saturday",
-  },
-];
-
-function WeekWeather() {
   return (
     <div className="mt-8">
       <h2 className="text-2xl font-bold tracking-tight">Week</h2>
       <div className="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3 lg:grid-cols-4">
-        {week.map((day) => (
+        {city.list.map((day: any) => (
           <Card
-            className="bg-secondary rounded-2xl flex items-center justify-between"
-            key={day.index}
+            className="bg-secondary rounded-2xl grid grid-cols-1 place-items-center md:grid-cols-2"
+            key={day.dt}
           >
             <CardHeader>
-              <SunIcon className="w-16 h-16" />
+              <Image
+                src={"/partly-cloudy-day.png"}
+                alt="partly-cloudy-image"
+                width={100}
+                height={100}
+              />
             </CardHeader>
-            <CardContent className="pt-4">{day.day}</CardContent>
+            <CardContent className="pt-4">
+              {
+                weekday[
+                  new Date(
+                    day.dt_txt.substring(0, day.dt_txt.indexOf(" "))
+                  ).getDay()
+                ]
+              }
+            </CardContent>
           </Card>
         ))}
       </div>

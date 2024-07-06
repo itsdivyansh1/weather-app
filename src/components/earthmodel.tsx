@@ -8,15 +8,22 @@ const Model = () => {
   const gltf = useLoader(GLTFLoader, "/earth/scene.gltf");
   return (
     <>
-      <primitive object={gltf.scene} scale={0.18} />
+      <primitive object={gltf.scene} scale={0.19} />
     </>
   );
 };
 
 export default function EarthModel() {
   return (
-    <div className="globe h-[20rem]">
-      <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }}>
+    <div className="globe md:h-[20rem] md:w-[20rem] h-[18rem]">
+      <Canvas
+        shadows
+        dpr={[1, 2]}
+        camera={{
+          position: [0, 0, 4],
+          fov: 50,
+        }}
+      >
         <ambientLight intensity={0.7} />
         <spotLight
           intensity={0.5}

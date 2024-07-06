@@ -22,7 +22,7 @@ export default async function Home({ params }: any) {
 
         <TodaysHighlight />
       </div>
-      <div className="col-span-1 m-2 md:m-8">
+      <div className="col-span-1 m-2 hidden md:m-8 lg:block">
         <Header title="Calendar" />
         <ShowCalendar />
       </div>
