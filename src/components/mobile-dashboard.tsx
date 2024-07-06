@@ -8,13 +8,14 @@ import { Input } from "./ui/input";
 import { ToggleTheme } from "./toggle-theme";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 function MobileDashbard() {
   return (
     <header className="md:hidden flex flex-row justify-between w-full border-b-2">
       <div className="p-2">
         <Button variant="outline" size="icon" aria-label="Home">
-          <Triangle className="size-5 fill-foreground" />
+          <Image src={"/weatherapp.svg"} alt="icon" width={30} height={30} />
         </Button>
       </div>
       <nav className="grid gap-[0.2] p-2 grid-flow-col ">
